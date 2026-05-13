@@ -1,0 +1,51 @@
+#particles{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle{
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    background: #fbfd93;
+
+    clip-path: polygon(
+        50% 0%,
+        100% 50%,
+        50% 100%,
+        0% 50%
+    );
+
+    box-shadow:
+        0 0 10px #faf560,
+        0 0 20px #e9f410;
+
+    animation: fallRotate linear infinite;
+}
+
+#particles{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+@keyframes fallRotate{
+    from{
+        transform:
+            translateY(-100px)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            translateY(110vh)
+            rotate(calc(360deg * var(--rotate-direction)));
+    }
+}
