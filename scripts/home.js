@@ -2,7 +2,7 @@ function renderImages() {
     const grid = document.getElementById("bg-grid");
     for(let i = 0; i < bgGridImages.length; i++) {
         grid.innerHTML += `
-            <img src="${bgGridImages[i]}" class="grid-img">
+            <img src="../${bgGridImages[i]}" class="grid-img">
         `;
     }
 }
@@ -12,7 +12,7 @@ function renderRatings() {
     for(let i = 0; i < ratings.length; i++) {
         container.innerHTML += `
             <div class="rating-card">
-                <img src="${ratings[i].image}"
+                <img src="../${ratings[i].image}"
                      class="rating-img">
                 <div class="p-6">
                     <div class="text-yellow-400 text-xl mb-4">

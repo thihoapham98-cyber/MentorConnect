@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../scripts/configs/home-student-nav-items-config.js"></script>
+  <script src="../scripts/configs/student-posts-config.js"></script>
+  <script src="../scripts/nav-items.js"></script>
+  <script src="../scripts/post-manager.js"></script>
+  <script src="../scripts/home-student.js"></script>
+  <link rel="stylesheet" href="../css-files/home-student.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="bg-black overflow-x-hidden relative">
+    <div id="particles"></div>
+<section class="relative h-[10vh] overflow-hidden bg-black z-10">
+    <nav class="fixed top-0 left-0 w-full z-30 px-10 py-6 flex items-center justify-between">
+        <div class="flex items-center gap-10">
+            <div class="flex items-center gap-2">
+                <img src="images/logo.png" class="w-10 h-10 object-contain">
+            </div>
+            <div id="nav-items" class="flex items-center gap-8"></div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="flex items-center bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-4 py-3 w-[280px]">
+                <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                <input type="text" placeholder="Search..." class="bg-transparent outline-none text-white placeholder-gray-400 ml-3 w-full">
+            </div>
+        </div>
+    </nav>
+
+    <img src="images/bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="absolute inset-0 backdrop-blur-md bg-white/5"></div>
+    <div id="bg-grid" class="absolute inset-0 grid grid-cols-4 gap-6 p-10 rotate-[-8deg] scale-110 opacity-70"></div>
+</section>
+
+<section class="bg-black px-10 py-20 z-10">
+    <div id="post-list"class="max-w-3xl mx-auto space-y-10"></div>
+</section>
+
+<footer class="bg-black border-t border-white/10 py-10 px-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+            <h3 class="text-white text-2xl font-black">Mentor Connect</h3>
+            <p class="text-gray-500 mt-2 text-sm">Kết nối mentor và student dễ dàng hơn.</p>
+        </div>
+
+        <div class="flex gap-6 text-sm">
+            <a href="#" class="text-gray-400 hover:text-white transition">Giới thiệu</a>
+            <a href="#" class="text-gray-400 hover:text-white transition">Hỗ trợ</a>
+            <a href="#" class="text-gray-400 hover:text-white transition">Chính sách</a>
+        </div>
+
+        <div class="flex gap-4 text-xl">
+            <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="text-center text-gray-600 text-sm mt-10">
+        © 2026 Mentor Connect. All rights reserved.
+    </div>
+</footer>
+<script>
+    renderNavbar()
+    renderPosts()
+    renderParticles()
+</script>
+</body>
+</html>
