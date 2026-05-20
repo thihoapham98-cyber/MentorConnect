@@ -8,10 +8,11 @@ function handleLogin(event) {
         return;
     }
 
+    sessionStorage.setItem("role", account.role);
     if(account.role === "mentor") {
-        window.location.href = "home-mentor.html";
+        window.location.href = "/public/home-mentor.html";
     }
     else {
-        window.location.href = "home-student.html";
+        window.location.href = "/public/home-student.html";
     }
 }

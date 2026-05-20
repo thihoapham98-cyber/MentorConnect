@@ -9,7 +9,7 @@ function renderPosts() {
         <div class="bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden backdrop-blur-xl">
             <div class="flex items-center justify-between p-6">
                 <div class="flex items-center gap-4">
-                    <img src="${post.avatar}"
+                    <img src="../${post.avatar}"
                          class="w-14 h-14 rounded-full object-cover">
                     <div>
                         <h3 class="text-white font-bold text-lg">
@@ -28,7 +28,7 @@ function renderPosts() {
                 </p>
             </div>
 
-            <img src="${post.image}"class="w-full h-[500px] object-cover">
+            <img src="../${post.image}"class="w-full h-[500px] object-cover">
 
             <div class="flex items-center justify-around py-5 border-t border-white/10">
                 <button class="flex items-center gap-3 text-gray-400 hover:text-pink-400 transition">
