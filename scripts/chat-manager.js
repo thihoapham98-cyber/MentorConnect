@@ -1,4 +1,4 @@
-const socket = new WebSocket("ws://127.0.0.1:3000");
+const socket = new WebSocket("https://mentorconnect-8yk0.onrender.com/");
 
 socket.onopen = () => {
     console.log("WebSocket connected client");
