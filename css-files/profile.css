@@ -1,0 +1,31 @@
+.profile-post{
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    overflow: hidden;
+}
+.post-head{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+}
+.post-avatar{
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    object-fit: cover;
+}
+.post-actions{
+    display: flex;
+    justify-content: space-around;
+    padding: 18px;
+}
+.post-actions button{
+    color: #9ca3af;
+    font-weight: 600;
+    transition: .2s;
+}
+.post-actions button:hover{
+    color: white;
+}

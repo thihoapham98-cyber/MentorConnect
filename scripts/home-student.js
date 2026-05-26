@@ -17,3 +17,12 @@ function renderParticles(){
         container.appendChild(particle);
     }
 }
+function renderNavbarProfile(){
+    const profileId = Number(sessionStorage.getItem("profileId"));
+    const profile = profiles.find(profile => profile.id === profileId);
+    if(!profile) return;
+
+    document.getElementById(
+        "navbar-profile-avatar"
+    ).src = profile.img_profile;
+}

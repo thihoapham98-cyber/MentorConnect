@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../scripts/configs/home-bg-grid-images-config.js"></script>
-  <script src="../scripts/configs/home-ratings-config.js"></script>
-  <script src="../scripts/configs/home-nav-items-config.js"></script>
-  <script src="../scripts/configs/auth-config.js"></script>
-  <script src="../scripts/home.js"></script>
-  <script src="../scripts/login.js"></script>
-  <script src="../scripts/nav-items.js"></script>
+  <script src="scripts/configs/home-bg-grid-images-config.js"></script>
+  <script src="scripts/configs/home-ratings-config.js"></script>
+  <script src="scripts/configs/home-nav-items-config.js"></script>
+  <script src="scripts/configs/profile-config.js"></script>
+  <script src="scripts/home.js"></script>
+  <script src="scripts/login.js"></script>
+  <script src="scripts/nav-items.js"></script>
   <link rel="stylesheet" href="css-files/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -20,7 +20,7 @@
     <nav class="fixed top-0 left-0 w-full z-30 px-10 py-6 flex items-center justify-between">
         <div class="flex items-center gap-10">
             <div class="flex items-center gap-2">
-                <img src="images/logo.png" class="w-10 h-10 object-contain">
+                <img src="images/logo.png" class="w-14 h-14 rounded-full object-cover border border-white/10">
             </div>
             <div id="nav-items" class="flex items-center gap-8"></div>
         </div>
@@ -35,7 +35,6 @@
     <div id="bg-grid" class="absolute inset-0 grid grid-cols-4 gap-6 p-10 rotate-[-8deg] scale-110 opacity-70"></div>
     <div class="relative z-20 h-full flex flex-col items-center justify-center text-center">
         <h1 class="text-white text-7xl font-black">Mentor Connect</h1>
-        <button class="mt-8 px-8 py-4 rounded-full bg-pink-500 text-white font-bold">Tạo tài khoản</button>
     </div>
 </section>
 

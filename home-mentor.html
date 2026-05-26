@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../scripts/configs/home-mentor-nav-items-config.js"></script>
-  <script src="../scripts/configs/student-posts-config.js"></script>
-  <script src="../scripts/nav-items.js"></script>
-  <script src="../scripts/post-manager.js"></script>
-  <script src="../scripts/home-mentor.js"></script>
-  <link rel="stylesheet" href="../css-files/home-mentor.css">
+  <script src="scripts/configs/home-mentor-nav-items-config.js"></script>
+  <script src="scripts/configs/post-config.js"></script>
+  <script src="scripts/configs/profile-config.js"></script>
+  <script src="scripts/nav-items.js"></script>
+  <script src="scripts/post-manager.js"></script>
+  <script src="scripts/home-mentor.js"></script>
+  <link rel="stylesheet" href="css-files/home-mentor.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -19,7 +20,9 @@
     <nav class="fixed top-0 left-0 w-full z-30 px-10 py-6 flex items-center justify-between">
         <div class="flex items-center gap-10">
             <div class="flex items-center gap-2">
-                <img src="images/logo.png" class="w-10 h-10 object-contain">
+                <a href="profile.html" class="flex items-center gap-2">
+                    <img id="navbar-profile-avatar" src="images/logo.png" class="w-14 h-14 rounded-full object-cover border border-white/10">
+                </a>
             </div>
             <div id="nav-items" class="flex items-center gap-8"></div>
         </div>
@@ -76,6 +79,7 @@
     renderNavbar()
     renderPosts()
     renderParticles()
+    renderNavbarProfile()
 </script>
 </body>
 </html>
