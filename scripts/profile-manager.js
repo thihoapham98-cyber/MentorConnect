@@ -37,6 +37,14 @@ function renderProfile(){
     
     document.getElementById("profile-intro-card")
         .innerText = profile.intro;
+    
+    const homeLink = document.getElementById("profile-home-link");
+    if(profile.role === "mentor"){
+        homeLink.href = "home-mentor.html";
+    }
+    else{
+        homeLink.href = "home-student.html";
+    }
 }
 
 function renderProfilePosts(){
