@@ -35,7 +35,7 @@ function renderChats(chatArray = chats){
         chatList.innerHTML += `
             <div onclick="renderChat(${i})"
                  class="flex items-center gap-4 px-5 py-4 hover:bg-white/5 cursor-pointer transition">
-                <img src="../${chat.img}"
+                <img src="${chat.img}"
                      class="w-14 h-14 rounded-full object-cover">
                 <div class="flex-1">
                     <h3 class="text-white font-bold">
@@ -64,7 +64,7 @@ function renderChat(index){
     const chat = chats[index];
     document.getElementById("right-chat").classList.remove("hidden");
     document.getElementById("chat-name").innerText = chat.name;
-    document.getElementById("chat-avatar").src = "../" + chat.img;
+    document.getElementById("chat-avatar").src = chat.img;
 }
 
 function renderMyMessage(message){
