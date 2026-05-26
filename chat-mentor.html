@@ -1,74 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="scripts/configs/chat-config.js"></script>
-  <script src="scripts/configs/mentor-information-chat-config.js"></script>
-  <script src="scripts/chat-manager.js"></script>
-  <link rel="stylesheet" href="css-files/home-student.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="scripts/configs/chat-config.js"></script>
+    <script src="scripts/configs/mentor-information-chat-config.js"></script>
+    <script src="scripts/chat-manager.js"></script>
+
+    <link rel="stylesheet" href="css-files/home-student.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body class="bg-black overflow-x-hidden relative">
-<section class="h-screen bg-black flex">
-    <!-- left sidebar -->
-    <div class="w-[350px] border-r border-white/10 bg-white/5 backdrop-blur-xl flex flex-col">
+<body class="bg-black overflow-hidden">
+
+<section class="h-screen flex bg-black">
+
+    <!-- LEFT -->
+    <div class="w-[350px] border-r border-white/10 bg-white/5 flex flex-col">
+
         <!-- top -->
         <div class="p-6 border-b border-white/10">
-            <h2 class="text-white text-3xl font-black">
+
+            <h2 class="text-white text-5xl font-black">
                 Chats
             </h2>
+
             <!-- search -->
             <div class="mt-5 flex items-center bg-white/10 rounded-full px-4 py-3">
+
                 <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
-                <input id="chat-search" type="text"
+
+                <input type="text"
                        placeholder="Search..."
-                       oninput="searchChats()"
                        class="bg-transparent outline-none text-white placeholder-gray-400 ml-3 w-full">
+
             </div>
+
         </div>
-        <div id="chat-list" class="flex-1 overflow-y-auto"></div>
+
+        <!-- chat list -->
+        <div id="chat-list"
+             class="flex-1 overflow-y-auto">
+        </div>
+
     </div>
 
-    <!-- right chat -->
-    <div id="right-chat" class="hidden flex flex-1 flex-col h-screen justify-between">
-        <!-- chat top -->
-        <div class="h-[90px] border-b border-white/10 bg-white/5 backdrop-blur-xl px-8 flex items-center justify-between">
+
+
+
+
+    <!-- RIGHT -->
+    <div id="right-chat"
+         class="flex-1 flex flex-col h-screen bg-black">
+
+        <!-- HEADER -->
+        <div class="h-[90px] border-b border-white/10 bg-white/5 px-8 flex items-center">
+
             <div class="flex items-center gap-4">
-                <img id="chat-avatar" src="images/home_social_1.jpg" class="w-14 h-14 rounded-full object-cover">
+
+                <img src="images/home_social_1.jpg"
+                     class="w-14 h-14 rounded-full object-cover">
+
                 <div>
-                    <h3 id="chat-name"
-                        class="text-white font-bold text-lg">
-                    </h3>
-                    <p class="text-green-400 text-sm">
+
+                    <h2 class="text-white text-2xl font-bold">
+                        Mentor
+                    </h2>
+
+                    <p class="text-green-400">
                         Online
                     </p>
+
                 </div>
+
             </div>
+
         </div>
 
-        <!-- messages -->
+
+
+
+
+        <!-- GOALS -->
+        <div class="border-b border-white/10 bg-white/5">
+
+            <!-- top -->
+            <div onclick="toggleGoals()"
+                 class="px-8 py-5 flex items-center justify-between cursor-pointer">
+
+                <div class="flex items-center gap-4">
+
+                    <h2 class="text-white text-3xl font-bold">
+                        Learning Goals
+                    </h2>
+
+                    <span id="progress-text"
+                          class="text-blue-400 text-xl font-bold">
+                        0%
+                    </span>
+
+                </div>
+
+                <i id="goal-arrow"
+                   class="fa-solid fa-chevron-down text-white text-xl transition duration-300">
+                </i>
+
+            </div>
+
+            <!-- content -->
+            <div id="goal-content"
+                 class="px-8 pb-6">
+
+                <!-- progress -->
+                <div class="w-full h-3 bg-white/10 rounded-full overflow-hidden mb-6">
+
+                    <div id="progress-bar"
+                         class="h-full bg-blue-500 transition-all duration-500"
+                         style="width:0%">
+                    </div>
+
+                </div>
+
+                <!-- tasks -->
+                <div class="space-y-4">
+
+                    <label class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl cursor-pointer">
+
+                        <input type="checkbox"
+                               class="goal-checkbox w-5 h-5 accent-blue-500">
+
+                        <span class="text-white text-xl">
+                            Finish CV
+                        </span>
+
+                    </label>
+
+                    <label class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl cursor-pointer">
+
+                        <input type="checkbox"
+                               class="goal-checkbox w-5 h-5 accent-blue-500">
+
+                        <span class="text-white text-xl">
+                            Practice IELTS Speaking
+                        </span>
+
+                    </label>
+
+                    <label class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl cursor-pointer">
+
+                        <input type="checkbox"
+                               class="goal-checkbox w-5 h-5 accent-blue-500">
+
+                        <span class="text-white text-xl">
+                            Complete Portfolio
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- MESSAGES -->
         <div id="chat-messages"
-            class="flex-1 overflow-y-auto px-8 py-6 space-y-6">
+             class="flex-1 overflow-y-auto px-8 py-6 space-y-4">
+
+            <div class="bg-blue-500 text-white w-fit max-w-[70%] px-5 py-3 rounded-2xl">
+                Hello! How can I help you today?
+            </div>
+
         </div>
 
-        <!-- input -->
-        <div class="p-6 border-t border-white/10 bg-white/5 backdrop-blur-xl">
+
+
+
+
+        <!-- INPUT -->
+        <div class="p-6 border-t border-white/10 bg-white/5">
+
             <div class="flex items-center gap-4">
-                <input type="text"
+
+                <input id="message-input"
+                       type="text"
                        placeholder="Type a message..."
-                       class="flex-1 bg-white/10 border border-white/10 rounded-full px-6 py-4 text-white outline-none">
-                <button class="w-14 h-14 rounded-full bg-blue-500 text-white text-xl hover:scale-105 transition">
+                       class="flex-1 bg-white/10 rounded-full px-6 py-4 text-white outline-none">
+
+                <button onclick="sendMessage()"
+                        class="w-14 h-14 rounded-full bg-blue-500 text-white text-xl hover:scale-105 transition">
+
                     <i class="fa-solid fa-paper-plane"></i>
+
                 </button>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
+
+
+
+
+
 <script>
-    renderChats();
+
+    // ===== PROGRESS =====
+
+    const checkboxes =
+        document.querySelectorAll(".goal-checkbox");
+
+    function updateProgress() {
+
+        const total = checkboxes.length;
+
+        let completed = 0;
+
+        checkboxes.forEach(cb => {
+
+            if(cb.checked) {
+
+                completed++;
+
+            }
+
+        });
+
+        const percent =
+            Math.round((completed / total) * 100);
+
+        document.getElementById("progress-bar")
+            .style.width = percent + "%";
+
+        document.getElementById("progress-text")
+            .innerText = percent + "%";
+    }
+
+    checkboxes.forEach(cb => {
+
+        cb.addEventListener("change", updateProgress);
+
+    });
+
+
+
+
+
+    // ===== TOGGLE GOALS =====
+
+    function toggleGoals() {
+
+        const content =
+            document.getElementById("goal-content");
+
+        const arrow =
+            document.getElementById("goal-arrow");
+
+        content.classList.toggle("hidden");
+
+        arrow.classList.toggle("rotate-180");
+    }
+
+
+
+
+
+    // ===== SEND MESSAGE =====
+
+    function sendMessage() {
+
+        const input =
+            document.getElementById("message-input");
+
+        const messages =
+            document.getElementById("chat-messages");
+
+        const text =
+            input.value.trim();
+
+        if(text === "") return;
+
+        const message =
+            document.createElement("div");
+
+        message.className =
+            "bg-white/10 text-white ml-auto w-fit max-w-[70%] px-5 py-3 rounded-2xl";
+
+        message.innerText = text;
+
+        messages.appendChild(message);
+
+        messages.scrollTop =
+            messages.scrollHeight;
+
+        input.value = "";
+    }
+
+
+
+
+
+    // ===== ENTER SEND =====
+
+    document
+        .getElementById("message-input")
+        .addEventListener("keydown", function(e) {
+
+            if(e.key === "Enter") {
+
+                sendMessage();
+
+            }
+
+        });
+
 </script>
+
 </body>
 </html>
