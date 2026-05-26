@@ -13,6 +13,9 @@ function handleLogin(event) {
         alert("Sai email hoặc mật khẩu");
         return;
     }
+    console.log(profile.id)
+        console.log(profile.name)
+
 
     sessionStorage.setItem("profileId", profile.id);
     sessionStorage.setItem("profileName", profile.name);
