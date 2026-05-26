@@ -1,4 +1,4 @@
-const socket = new WebSocket("https://mentorconnect-8yk0.onrender.com/");
+const socket = new WebSocket("https://mentorconnect-u6z3.onrender.com")
 
 socket.onopen = () => {
     console.log("WebSocket connected client");
@@ -15,6 +15,8 @@ socket.onclose = () => {
 socket.onmessage = (event) => {
     const data = JSON.parse(event.data);
     const currentRole = sessionStorage.getItem("role")
+    if(data.type !== "chat") return;
+    
     console.log("Me = " + currentRole);
     console.log("You = " + data.role)
     if(data.role === currentRole){
@@ -46,6 +48,7 @@ function renderChats(chatArray = chats){
         `;
     }
 }
+
 function searchChats(){
     const keyword =
         document.getElementById("chat-search")
@@ -105,6 +108,7 @@ function sendMessage(){
     renderMyMessage(message);
 
     const data = {
+        type: "chat",
         message: message,
         role: currentRole
     };
