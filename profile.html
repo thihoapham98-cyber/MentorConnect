@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/configs/profile-config.js"></script>
+    <script src="scripts/configs/post-config.js"></script>
+    <script src="scripts/profile-manager.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css-files/profile.css">
+    <title>Mentor Profile</title>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+<nav class="fixed top-0 left-0 w-full z-30 px-10 py-6 flex items-center justify-between bg-black/60 backdrop-blur-xl border-b border-white/10">
+    <a href="home-mentor.html" class="text-gray-300 hover:text-white transition">Home</a>
+</nav>
+
+<section class="pt-24">
+    <div class="max-w-5xl mx-auto">
+        <div class="h-[320px] rounded-b-[2rem] overflow-hidden relative">
+            <img id="profile-cover-photo" src="images/bg.jpg" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        <div class="px-8 pb-8 border-b border-white/10">
+            <div class="flex items-end justify-between -mt-20 relative z-10">
+                <div class="flex items-end gap-6">
+                    <img id="profile-avatar" src="images/home_social_1.jpg" class="w-40 h-40 rounded-full object-cover border-4 border-black">
+                    <div class="mb-4">
+                        <h1 id="profile-name" class="text-4xl font-black"></h1>
+                    </div>
+                </div>
+
+                <button class="mb-4 px-6 py-3 rounded-full bg-blue-500 hover:bg-blue-600 font-bold transition">
+                    <i class="fa-solid fa-pen mr-2"></i>
+                    Edit profile
+                </button>
+            </div>
+
+            <p id="profile-intro"
+                class="text-gray-300 mt-6 max-w-2xl leading-7">
+            </p>
+
+            <div class="flex gap-6 mt-5 text-sm text-gray-400">
+                <span id="profile-nationality">
+                    <i class="fa-solid fa-location-dot mr-2"></i>
+                </span>
+                <span id="profile-role-badge"></span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8 px-8 py-8">
+            <aside class="space-y-5">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <h2 class="font-bold text-xl mb-4">Intro</h2>
+                    <p id="profile-intro-card"
+                        class="text-gray-400 text-sm leading-6">
+                    </p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <h2 class="font-bold text-xl mb-4">Skills</h2>
+                    <div id="profile-skills"
+                        class="flex flex-wrap gap-2">
+                    </div>
+                </div>
+            </aside>
+
+            <main id="profile-post-list"
+                class="space-y-6">
+            </main>
+        </div>
+    </div>
+</section>
+
+<script>
+    renderProfile();
+    renderProfilePosts();
+</script>
+</body>
+</html>
